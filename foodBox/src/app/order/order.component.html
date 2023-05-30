@@ -1,0 +1,60 @@
+<div class="container container-fluid">
+    <div class="row">
+    <div class="col-md-4">
+    <h3 style="color: blue;">Welcome {{user.name}}</h3>
+    <br>
+    <h3 style="color: blue;"> {{user.email}}</h3>
+
+    </div>
+    <div class="col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h1>Order Details</h1>
+            
+    </div>
+    <div class="card-body">
+        <form [formGroup]="foodForm" (ngSubmit)="orderFood()" >
+            <input type="text" placeholder="food quantity" class="form-control" formControlName="quantity" ><br>
+          <!--<input type="text"  class="form-control"  formControlName="totalBill"><br> --> 
+           
+           <input type="button" value="Check the Billable Amount " class="btn btn-danger" (click)="bill()"><br>
+           <div style="background-color: aqua;color:darkgreen" >Total is : {{billable}}</div>
+    
+          <br>
+           <input type="submit" value="Save Order Details" class="btn btn-primary" [disabled]="foodForm.invalid">
+           <br><br>
+        </form>
+        <table class="table table-bordered table-striped">
+  
+            <thead   style="background-color:cornflowerblue">
+
+                <tr>
+                    <th>Food Id</th>
+                    <th>Food Name</th>
+                    <th>Food Type</th>
+                    <th>Food Price</th>
+                    <th>Food Category</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let food of foodList">
+                    <td>{{food.foodId}}</td>
+                    <td>{{food.foodName}}</td>
+                    <td>{{food.foodCategory}}</td>
+                    <td>{{food.foodPrice}}</td>
+                    <td>{{food.category.categoryName}}</td>
+                   
+                    
+               
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    </div>
+    

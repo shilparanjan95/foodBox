@@ -1,0 +1,32 @@
+<div class="container container-fluid">
+    <div class="row">
+    <div class="col-md-2">
+    
+    </div>
+    <div class="col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h1>Payment </h1>
+            
+    </div>
+    <div class="card-body">
+        <div *ngIf="msg!=null" style="background-color: aquamarine;color:red">
+            {{msg}}
+        </div>
+            <input type="text" placeholder="enter otp" class="form-control"><br>
+             Pay Amount :  {{bill}}
+
+             
+            <br>
+            <br>
+           <input type="button" value="Proceed To Pay" class="btn btn-success" (click)="showMessage()">
+        
+    </div>
+    </div>
+    </div>
+    <div class="col-md-2">
+    
+    </div>
+    </div>
+    </div>
+    

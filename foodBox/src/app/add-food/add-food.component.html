@@ -1,0 +1,38 @@
+<div class="container container-fluid">
+<div class="row">
+<div class="col-md-2">
+
+</div>
+<div class="col-md-8">
+<div class="card">
+    <div class="card-header">
+        <h1>Add Food Item</h1>
+        
+</div>
+<div class="card-body">
+    <form [formGroup]="foodForm" (ngSubmit)="saveFood()" >
+        <input type="text" placeholder="food Name" class="form-control" formControlName="foodName"><br>
+        <input type="text" placeholder="food Price" class="form-control" formControlName="foodPrice"><br>
+        <input type="text" placeholder="food Type" class="form-control" formControlName="foodCategory"><br>
+        <select class="form-control" formControlName ="categoryName" >
+         <option>Select Category</option>
+          <option  *ngFor="let cat of categories" [value]="cat.categoryName">{{cat.categoryName}}
+    </option>
+        
+       
+
+        </select> 
+
+        <br>
+        <a routerLink="/addCategory">Want to add another Category ?</a><br>
+       <input type="submit" value="Add Food " class="btn btn-primary" style="text-align: center;" [disabled] = "foodForm.invalid">
+    </form>
+    
+</div>
+</div>
+</div>
+<div class="col-md-2">
+
+</div>
+</div>
+</div>

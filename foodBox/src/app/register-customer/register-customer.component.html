@@ -1,0 +1,32 @@
+<div class="container container-fluid">
+    <div class="row">
+    <div class="col-md-2">
+    
+    </div>
+    <div class="col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h1>User Registration </h1>
+            
+    </div>
+    <div class="card-body">
+        <form [formGroup]="custForm" (ngSubmit)="saveUser()" >
+            <input type="text" placeholder=" Name" class="form-control" formControlName="name"><br>
+            <input type="email" placeholder="Email" class="form-control" formControlName="email" required><br>
+            <input type="password" placeholder="password" class="form-control" formControlName="password"><br>
+           
+    
+            <br>
+            <a routerLink="/login">Login Here </a><br>
+           <input type="submit" value="Register " class="btn btn-primary" [disabled]="custForm.invalid">
+        </form>
+        
+    </div>
+    </div>
+    </div>
+    <div class="col-md-2">
+    
+    </div>
+    </div>
+    </div>
+    

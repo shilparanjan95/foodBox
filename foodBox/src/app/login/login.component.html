@@ -1,0 +1,33 @@
+<div class="container container-fluid">
+    <div class="row">
+    <div class="col-md-2">
+    
+    </div>
+    <div class="col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <h1>Login to foodie</h1>
+            
+    </div>
+    <div class="card-body">
+        <div *ngIf="msg!=null" style="background-color: aquamarine;color:red">
+            {{msg}}
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" >
+            <input type="email" placeholder="Email" class="form-control" formControlName="email" required ><br>
+            <input type="password" placeholder="password" class="form-control" formControlName="password"><br>
+           
+    
+            <br>
+           <input type="submit" value="Login " class="btn btn-success" [disabled]="loginForm.invalid">
+        </form>
+        
+    </div>
+    </div>
+    </div>
+    <div class="col-md-2">
+    
+    </div>
+    </div>
+    </div>
+    

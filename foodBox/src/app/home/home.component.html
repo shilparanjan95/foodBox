@@ -1,0 +1,65 @@
+<div class="container container-fluid">
+    <div class="row">
+    
+    <div class="col-md-12">
+       
+    <div class="card">
+        <div class="card-header">
+            <h1>Foodie Search</h1>
+            
+    </div>
+    <div class="card-body">
+        <div *ngIf="msg!=null" style="background-color: aquamarine;color:red">
+            {{msg}}
+        </div>
+          <!-- <form #myForm="ngForm"> -->
+            <form [formGroup]="searchForm">
+            <input type="text" placeholder="search by category Name /food name /food type" 
+            class="form-control"     formControlName="cat" required><br>
+            
+             
+            <br>
+            <input type="submit"  class="form-control" (click)="search()" class="btn btn-sm btn-primary" value="Search Food"><br>
+
+            <br>
+        </form>
+     <!--   </form>-->
+        
+    </div>
+    </div>
+    </div>
+    <div class="col-md-12">
+       
+        <table class="table table-bordered table-striped" *ngIf = "showTable==true">
+  
+            <thead  class="thead thead-dark">
+
+                <tr>
+                    <th>Food Id</th>
+                    <th>Food Name</th>
+                    <th>Food Type</th>
+                    <th>Food Price</th>
+                    <th>Food Category</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let food of foods">
+                    <td>{{food.foodId}}</td>
+                    <td>{{food.foodName}}</td>
+                    <td>{{food.foodCategory}}</td>
+                    <td>{{food.foodPrice}}</td>
+                    <td>{{food.category.categoryName}}</td>
+                   
+                    <td><input type="button" value="Save/Update Order" class="btn btn-success" (click) ="orderFood(food.foodId)">
+                      </td>
+               
+                </tr>
+            </tbody>
+        </table>
+       
+        </div>
+    </div>
+    </div>
+    
