@@ -99,4 +99,10 @@ getCategory() :Observable<Category[]>
    
     return this.httpClient.post<Order>(this.orderUrl, order);
   }
+
+  activate(id:number) :Observable<string>
+  {
+
+    return this.httpClient.get<string>(this.foodUrl+"/activate/"+id);
+  }
 }

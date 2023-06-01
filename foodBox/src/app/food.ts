@@ -11,6 +11,7 @@ export class Food {
       quantity:number;
       order:Order;
       img:string;
+      isActive:boolean;
       constructor(foodName:string,foodCategory:string,foodPrice:string,category:Category)
       {
           this.foodName = foodName;

@@ -11,7 +11,7 @@ export class ViewFoodComponent implements OnInit {
   constructor(private service :ApiServiceService) { }
  foods:Food[];
   ngOnInit(): void {
-    this. loadFoodItems();
+    this.loadFoodItems();
   }
 
 
@@ -32,6 +32,20 @@ deleteFood(id:number)
    );
    alert("food deleted  successully! ");
    this.loadFoodItems();
+
+}
+
+activateFood(id:number)
+{
+    //alert("activateFood called");
+  this.service.activate(id).subscribe(
+    data => {
+      console.log("food activated");
+      alert("food enable/disable done");
+    }
+  );
+  alert("food enable/disable done");
+  this.loadFoodItems();
 
 }
 }

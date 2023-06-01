@@ -114,4 +114,13 @@ public class FoodAppService {
     public Order getOrder(String id) {
          return orderRepo.findById(id).get();
     }
+
+    public String activate(Integer id)
+    { Food foodItem = foodRepo.findById(id).get();
+      Boolean isActive =  foodRepo.findById(id).get().getIsActive();
+        foodItem.setIsActive(!isActive);
+        foodRepo.save(foodItem);
+        return "Success";
+    }
+
 }

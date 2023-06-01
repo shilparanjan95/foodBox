@@ -49,7 +49,7 @@ public class FoodAppController {
         // read and write the file to the local folder
 
 
-
+        food.setIsActive(false);
 
         return new  ResponseEntity(foodAppService.saveFood(food), HttpStatus.CREATED);
     }
@@ -127,5 +127,11 @@ public class FoodAppController {
         if (! directory.exists()){
             directory.mkdir();
         }
+    }
+
+    @GetMapping("/food/activate/{id}")
+    public String activateFood(@PathVariable("id") Integer id)
+    {
+        return foodAppService.activate(id);
     }
 }

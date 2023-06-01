@@ -20,7 +20,8 @@ public class Food  implements Serializable {
     private String foodCategory;
     private String foodPrice;
     private Integer quantity;
-    private String img;
+    @Column(columnDefinition = "boolean default false")
+    private Boolean isActive;
     @OneToOne
     @JoinColumn(name = "category_Id",referencedColumnName = "categoryId")
     private Category category;
